@@ -16,23 +16,23 @@
       <div class="box">
         <div>
           <p>Nome</p>
-          <input type="text" name="nome" id="">
+          <input type="text" name="nome" id="" value="{{ request.POST.nome }}">
         </div>
         <div>
           <p>Sobrenome</p>
-          <input type="text" name="sobrenome" id="">
+          <input type="text" name="sobrenome" id="" value="{{ request.POST.sobrenome }}">
         </div>
         <div>
           <p>Idade</p>
-          <input type="number" name="idade" id="">
+          <input type="number" name="idade" id="" value="{{ request.POST.idade}}">
         </div>
         <div>
           <p>E-mail</p>
-          <input type="email" name="email" id="">
+          <input type="email" name="email" id="" value="{{ request.POST.email }}">
         </div>
         <div>
           <p>Usuário</p>
-          <input type="text" name="usuario" id="">
+          <input type="text" name="usuario" id="" value="{{ request.POST.usuario }}">
         </div>
         <div>
           <p>Senha</p>

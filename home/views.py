@@ -26,7 +26,6 @@ def Login(request):
         print('sucesso')
         return redirect('index')
 
-
 def Register(request):
     if request.method == 'post':
         print('method no post')
@@ -55,23 +54,27 @@ def Register(request):
     if senha != senha2: 
         print('As senhas devem ser iguais!')
         return render(request, 'register.html')
-    
-    if idade <= 16:
+
+    if len(senha) < 5:
+        print('senha precisa ter pelo menos 5 caracteres.')
+        return render(request, 'register.html')
+
+    if int(idade) <= 16:
         print('Idade mínima para criar conta é de 16 anos.')
 
-    if User.objects.filter(username='usuario').exists():
+    if User.objects.filter(username=user).exists():
         print('O Usuario já existe.')
         return render(request, 'register.html')
 
-    if User.objects.filter(email='email').exists():
+    if User.objects.filter(email=email).exists():
         print('O email já existe.')
         return render(request, 'register.html')
 
-    user = User.objects.create_user(username=user, nome=nome, sobrenome=sobrenome,idade=idade, email=email, password=senha)
+    user = User.objects.create_user(username=user, first_name=nome, last_name=sobrenome, email=email, password=senha)
+    user.idade = idade
     user.save()
-
     print('usuario logado com sucesso!')
-
+    return redirect('index')
 
     
 # Create your views here.
