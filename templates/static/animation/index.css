@@ -1,0 +1,12 @@
+.logo:hover{
+  transition: transform 2s;
+  transform:rotate3d(0, 1, 0, 180deg);
+  transform:rotate(360deg);
+}
+
+.apresentacao h1 {
+  transition: transform 0.2s;
+}
+.apresentacao h1:hover {
+  transform: scale(1.1);
+}

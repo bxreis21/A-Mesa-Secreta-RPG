@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{% static 'css/style.css'%}">
+  <link rel="stylesheet" href="{% static 'animation/index.css'%}">
   <title>Document</title>
 </head>
 <body>
@@ -14,8 +15,8 @@
     <div class="navebar">
       <a href="#">RPG</a>
       <div class="direita">
-        <a href="">criar</a>
-        <a href="">logar</a>
+        <a href="{% url 'register' %}">criar</a>
+        <a href="{% url 'login' %}">logar</a>
       </div>
         
     </div>
@@ -23,7 +24,7 @@
     <div class="apresentacao">
       <h1>A mesa secreta</h1>
       <h2>RPG</h2>
-      <img src="{% static 'midia/Logo.png'%}" alt="">
+      <img class="logo" src="{% static 'midia/Logo.png'%}" alt="">
     </div>
 
     <div class="cards">
