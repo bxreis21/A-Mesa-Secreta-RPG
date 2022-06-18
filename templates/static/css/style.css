@@ -1,0 +1,116 @@
+:root {
+  --primary-color: hsl(170, 100%, 26%);
+  --headline: hsl(210, 11%, 15%);
+  --paragraph: hsl(210, 9%, 31%);
+
+  --brand-beige: hsl(39, 100%, 97%);
+  --brand-light: hsl(148, 23%, 89%);
+
+  --backgound: hsla(192, 15%, 94%, 1);
+  --rosa: #c2185b;
+  --fonte-roxo: hsl(262, 47%, 55%);
+  font-size: 62.5%;
+
+  --nav-height: 7.2rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+
+  font-family: 'Roboto';
+  font-size: 1.6rem;
+}
+
+.wrapper {
+  width: 100%;
+  background-color: black;
+}
+
+.navebar{
+  width: 100%;
+  height: 5.7rem;
+  background-color: #5A0C36;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navebar a{
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  font-size: 3rem;
+  color: white;
+  text-decoration: none;
+  padding: 0.1rem;
+  padding-left: 1.8rem;
+  gap: 30rem;
+}
+
+.navebar a:nth-child(1){
+  padding-left: 1.8rem;
+}
+
+.navebar .direita{
+  padding-right: 1.8rem;
+}
+
+.apresentacao{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.apresentacao h1{
+  padding-top: 8.5rem;
+  font-family: 'Bebas Neue', sans-serif;
+  color: white;
+  font-size: 9.6rem;
+}
+
+.apresentacao h2{
+  font-family: 'Bebas Neue', sans-serif;
+  color: white;
+  font-size: 4.5rem;
+}
+
+.apresentacao img{
+  width: 50rem;
+  margin-bottom: 3rem;
+}
+
+.cards {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 50rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 15rem;
+  background-position: 0rem;
+  background-size:cover;
+}
+
+.card h2{
+  font-family: 'Bebas Neue', sans-serif;
+  color: white;
+  font-size: 5rem;
+}
+
+.card p{
+  font-family: 'Bebas Neue', sans-serif;
+  color: white;
+  font-size: 1.4rem;
+}
