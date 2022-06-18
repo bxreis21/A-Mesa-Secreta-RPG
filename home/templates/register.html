@@ -11,37 +11,38 @@
 </head>
 <body>
   <div class="wrapper">
-    <form method="post" action="">
+    <form method="post" action="{% url 'register' %}">
+      {% csrf_token %}
       <div class="box">
         <div>
-          <p>nome</p>
-          <input type="text" name="" id="">
+          <p>Nome</p>
+          <input type="text" name="nome" id="">
         </div>
         <div>
-          <p>sobrenome</p>
-          <input type="text" name="" id="">
+          <p>Sobrenome</p>
+          <input type="text" name="sobrenome" id="">
         </div>
         <div>
-          <p>idade</p>
-          <input type="text" name="" id="">
+          <p>Idade</p>
+          <input type="number" name="idade" id="">
         </div>
         <div>
-          <p>e-mail</p>
-          <input type="text" name="" id="">
+          <p>E-mail</p>
+          <input type="email" name="email" id="">
         </div>
         <div>
-          <p>usuário</p>
-          <input type="text" name="" id="">
+          <p>Usuário</p>
+          <input type="text" name="usuario" id="">
         </div>
         <div>
-          <p>senha</p>
-          <input type="text" name="" id="">
+          <p>Senha</p>
+          <input type="password" name="senha" id="">
         </div>
         <div>
-          <p>confirme sua senha</p>
-          <input type="text" name="" id="">
+          <p>Confirme sua senha</p>
+          <input type="password" name="senha2" id="">
         </div>
-        <button value="submit" type="submit">sbmeter</button>
+        <button value="submit" type="submit">Criar conta</button>
       </div>
     </form>
   </div>

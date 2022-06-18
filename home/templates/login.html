@@ -11,15 +11,16 @@
 </head>
 <body>
     <div class="wrapper">
-      <form method="post" action="">
+      <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
         <div class="box">
           <div>
             <p>Login:</p>
-            <input type="login">
+            <input type="login" name="login">
           </div>
           <div>
             <p>Senha:</p>
-            <input type="senha" name="" id="">
+            <input type="senha" name="senha" id="">
           </div>
           <button type="submit" value="submit">Logar</button>
           <a href="">Não possui uma conta? Crie aqui</a>
