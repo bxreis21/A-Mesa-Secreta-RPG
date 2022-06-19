@@ -1,5 +1,7 @@
 :root {
-  --primary-color: hsl(170, 100%, 26%);
+  --primary-color: hsl(139, 82%, 31%);
+  --secondary-color: hsl(122, 72%, 42%);
+
   --headline: hsl(210, 11%, 15%);
   --paragraph: hsl(210, 9%, 31%);
 
@@ -36,7 +38,7 @@ html {
 .navebar{
   width: 100%;
   height: 5.7rem;
-  background-color: #430A74;
+  background-color: var(--primary-color);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -69,44 +71,67 @@ html {
 }
 .apresentacao h1{
   padding-top: 8.5rem;
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Yan', 'Bebas Neue', sans-serif;
+  text-shadow: -1.5rem 0.6rem 3rem #1EB824;
   color: white;
   font-size: 9.6rem;
+  font-weight: 500;
+  letter-spacing: .4rem;
 }
 
 .apresentacao h2{
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Yan', 'Bebas Neue', sans-serif;
+  text-shadow: -1.5rem 0.6rem 3.8rem #1EB824;
   color: white;
   font-size: 4.5rem;
+  font-weight: 500;
+  letter-spacing: .4rem;
 }
 
 .apresentacao img{
   width: 50rem;
   margin-bottom: 3rem;
+  margin-bottom: 8rem;
 }
 
-.cards {
+.container .backgound{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.container .cards {
   display: flex;
   width: 100%;
   align-items: center;
   justify-content: center;
-  padding-bottom: 50rem;
+  padding-top: 10rem;
+  padding-bottom: 0rem;
+
+  gap: 6.2rem;
 }
+
 
 .card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding-inline: 15rem;
-  background-position: 0rem;
-  background-size:cover;
+  width: 40rem;
+  height: 41rem;
+
+  border-radius: 1rem;
+  background-color: var(--primary-color);
+  padding: 2rem;
+  gap: 2rem;
+  transform: skew(-6deg)
+  
 }
 
 .card h2{
   font-family: 'Bebas Neue', sans-serif;
   color: white;
-  font-size: 5rem;
+  font-size: 6rem;
 }
 
 .card p{

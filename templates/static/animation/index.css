@@ -1,12 +1,26 @@
+:root {
+  --primary-color: hsl(139, 82%, 31%);
+  --secondary-color: hsl(122, 72%, 42%);
+}
+
 .logo:hover{
-  transition: transform 2s;
+  transition: transform 2.5s;
   transform:rotate3d(0, 1, 0, 180deg);
   transform:rotate(360deg);
 }
 
 .apresentacao h1 {
-  transition: transform 0.2s;
+  transition: transform 0.8s;
 }
 .apresentacao h1:hover {
   transform: scale(1.1);
+}
+
+.card{
+  transition: transform 1s;
+  transform: 1s;
+}
+
+.card:hover{
+  background-color: var(--secondary-color);
 }

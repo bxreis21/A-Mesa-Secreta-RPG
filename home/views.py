@@ -3,32 +3,35 @@ from django.shortcuts import redirect, render
 from django.core.validators import validate_email
 from django.contrib.auth.models import User
 from django.contrib import auth
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
 
 
-def Index(request):
+def index(request):
     return render(request, 'index.html')
 
-def Login(request):
-    if request.method != 'post':
+def login(request):
+    if request.method != 'POST':
+        print('no post')
         return render(request, 'login.html')
-
 
     usuario = request.POST.get('login')
     senha = request.POST.get('senha')
     user = auth.authenticate(request, username=usuario,password=senha)
 
     if not user:
-        print('Preencha os campos!')
-        return render(request, 'login.html')
+        messages.error(request, 'Usuário e/ou senha não encontrados na base de dados.')
+        return redirect('login')
     
     else:
         auth.login(request, user)
-        print('sucesso')
+        messages.success(request, 'Logado com sucesso!')
         return redirect('index')
 
-def Register(request):
-    if request.method == 'post':
-        print('method no post')
+
+def register(request):
+    if request.method != 'POST':
         return render(request, 'register.html')
     
     user = request.POST.get('usuario')
@@ -41,40 +44,43 @@ def Register(request):
 
 
     if not user or not nome or not sobrenome or not idade or not email or not senha or not senha2:
-        print('Preencha todos os campos!')
+        messages.error(request, 'Preencha os campos!')
         return render(request, 'register.html')
 
     try:
         validate_email(email)
 
     except ValidationError:
-        print('Email Inválido!')
+        messages.error(request,'Email inválido.')
         return render(request, 'register.html')
 
     if senha != senha2: 
-        print('As senhas devem ser iguais!')
+        messages.error(request, 'As senhas devem ser iguais')
         return render(request, 'register.html')
 
     if len(senha) < 5:
-        print('senha precisa ter pelo menos 5 caracteres.')
+        messages.error(request, 'A senha precisa ter pelo menos 5 caracteres' )
         return render(request, 'register.html')
 
     if int(idade) <= 16:
-        print('Idade mínima para criar conta é de 16 anos.')
+        messages.error(request,'Idade mínima para criar conta é de 16 anos.')
+        return render(request, 'register.html')
 
     if User.objects.filter(username=user).exists():
-        print('O Usuario já existe.')
+        messages.error(request, 'O nome de usuário já existe.')
         return render(request, 'register.html')
 
     if User.objects.filter(email=email).exists():
-        print('O email já existe.')
+        messages.error(request, 'O email escolhido já possui uma conta no nosso site.')
         return render(request, 'register.html')
 
     user = User.objects.create_user(username=user, first_name=nome, last_name=sobrenome, email=email, password=senha)
-    user.idade = idade
     user.save()
-    print('usuario logado com sucesso!')
-    return redirect('index')
+    messages.success(request, 'Usuário logado com sucesso.')
+    return redirect('login')
 
-    
-# Create your views here.
+
+@login_required
+def log_out(request):
+    logout(request)
+    return redirect('index')
