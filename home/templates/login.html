@@ -9,9 +9,37 @@
   <link rel="stylesheet" href="{% static 'css/_messages.css'%}">
   <link rel="stylesheet" href="{% static 'css/login.css'%}">
   <title>Login</title>
+  <style>
+    .wrapper {
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("{% static 'midia/bg-login.svg'%}");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-color: black;
+      position: absolute;
+    }
+
+  </style>
 </head>
 <body>
     <div class="wrapper">
+      <div class="back">
+        <a href=""
+          ><svg
+            width="7"
+            height="11"
+            viewBox="0 0 7 11"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.92687 0.188134L1.06875 5.17188C0.983423 5.25942 0.935669 5.37683 0.935669 5.49907C0.935669 5.62131 0.983423 5.73872 1.06875 5.82626L5.92687 10.8119C5.96662 10.8527 6.01414 10.8852 6.06663 10.9073C6.11912 10.9295 6.17552 10.9409 6.2325 10.9409C6.28947 10.9409 6.34587 10.9295 6.39836 10.9073C6.45086 10.8852 6.49838 10.8527 6.53812 10.8119C6.61989 10.7282 6.66567 10.6158 6.66567 10.4988C6.66567 10.3817 6.61989 10.2694 6.53812 10.1856L1.96969 5.49907L6.53812 0.813446C6.61961 0.729772 6.66522 0.617589 6.66522 0.50079C6.66522 0.383991 6.61961 0.271808 6.53812 0.188134C6.49838 0.147312 6.45086 0.114866 6.39836 0.0927116C6.34587 0.0705571 6.28947 0.0591431 6.2325 0.0591431C6.17552 0.0591431 6.11912 0.0705571 6.06663 0.0927116C6.01414 0.114866 5.96662 0.147312 5.92687 0.188134Z"
+              fill="white"
+            />
+          </svg>
+        </a>
+        <a href="{% url 'index' %}">Voltar ao mistério</a>
+      </div>
       <form method="post" action="{% url 'login' %}">
         {% csrf_token %}
         <div class="box">

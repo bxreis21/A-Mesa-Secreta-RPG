@@ -35,15 +35,22 @@ def register(request):
         return render(request, 'register.html')
     
     user = request.POST.get('usuario')
-    nome = request.POST.get('nome')
-    sobrenome = request.POST.get('sobrenome')
+    nome_completo = request.POST.get('nome_completo')
     idade = request.POST.get('idade')
     email = request.POST.get('email')
     senha = request.POST.get('senha')
     senha2 = request.POST.get('senha2')
 
+    nome_completo = nome_completo.strip(' ').lower().title().split(' ')
+    nome = nome_completo[0]
+    sobrenome = ' '.join(nome_completo[1:]).lower().title().strip()
 
-    if not user or not nome or not sobrenome or not idade or not email or not senha or not senha2:
+    print(nome_completo)
+    print(nome)
+    print(sobrenome)
+
+
+    if not user or not nome_completo or not idade or not email or not senha or not senha2:
         messages.error(request, 'Preencha os campos!')
         return render(request, 'register.html')
 

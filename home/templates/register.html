@@ -10,6 +10,10 @@
   <title>register</title>
   <script defer src="{% static 'Js/register.js'%}"></script>
   <style type="text/css">
+     @font-face{
+      font-family: 'Yan';
+      src: url("{% static 'fonts/SwissGrit/SwissGrit.otf' %}");
+    }
     .wrapper {
       background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("{% static 'midia/bg-register10.svg'%}");
       background-size: contain;
@@ -22,49 +26,107 @@
 
 <body>
   <div class="wrapper">
+    <div class="back">
+      <a href=""
+        ><svg
+          width="7"
+          height="11"
+          viewBox="0 0 7 11"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M5.92687 0.188134L1.06875 5.17188C0.983423 5.25942 0.935669 5.37683 0.935669 5.49907C0.935669 5.62131 0.983423 5.73872 1.06875 5.82626L5.92687 10.8119C5.96662 10.8527 6.01414 10.8852 6.06663 10.9073C6.11912 10.9295 6.17552 10.9409 6.2325 10.9409C6.28947 10.9409 6.34587 10.9295 6.39836 10.9073C6.45086 10.8852 6.49838 10.8527 6.53812 10.8119C6.61989 10.7282 6.66567 10.6158 6.66567 10.4988C6.66567 10.3817 6.61989 10.2694 6.53812 10.1856L1.96969 5.49907L6.53812 0.813446C6.61961 0.729772 6.66522 0.617589 6.66522 0.50079C6.66522 0.383991 6.61961 0.271808 6.53812 0.188134C6.49838 0.147312 6.45086 0.114866 6.39836 0.0927116C6.34587 0.0705571 6.28947 0.0591431 6.2325 0.0591431C6.17552 0.0591431 6.11912 0.0705571 6.06663 0.0927116C6.01414 0.114866 5.96662 0.147312 5.92687 0.188134Z"
+            fill="white"
+          />
+        </svg>
+      </a>
+      <a href="{% url 'index' %}">Back to the future</a>
+    </div>
+
     <form method="post" action="{% url 'register' %}">
       {% csrf_token %}
       <div class="box">
         <div class="info">
-          <p>Nome</p>
-          <input type="text" name="nome" id="" value="{{ request.POST.nome }}">
+          <div class="pergunta">
+            <p>Quem é Você ?</p>
+          </div>
+          <input type="text" name="nome_completo" id="" value="{{ request.POST.nome_completo }}" placeholder="Seu nome e sobrenome.">
+          <svg width="844" height="5" viewBox="0 0 844 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0.996475" y1="3.48121" x2="843.997" y2="1.50001" stroke="white" stroke-width="3"/>
+            </svg>
+            
         </div>
         <div class="info">
-          <p>Sobrenome</p>
-          <input type="text" name="sobrenome" id="" value="{{ request.POST.sobrenome }}">
+          <div class="pergunta">
+            <p>A quanto tempo está vivo</p>
+          </div>
+          <input type="number" name="idade" id="" value="{{ request.POST.idade}}" placeholder="Sua idade.">
+          <svg width="844" height="5" viewBox="0 0 844 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0.996475" y1="3.48121" x2="843.997" y2="1.50001" stroke="white" stroke-width="3"/>
+            </svg>
+          
         </div>
         <div class="info">
-          <p>Idade</p>
-          <input type="number" name="idade" id="" value="{{ request.POST.idade}}">
+          <div class="pergunta">
+            <p>E-mail ?</p>
+          </div>
+          <input type="email" name="email" id="" value="{{ request.POST.email }}" placeholder="seu e-mail">
+          <svg width="844" height="5" viewBox="0 0 844 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0.996475" y1="3.48121" x2="843.997" y2="1.50001" stroke="white" stroke-width="3"/>
+            </svg>
         </div>
+
         <div class="info">
-          <p>E-mail</p>
-          <input type="email" name="email" id="" value="{{ request.POST.email }}">
+          <div class="pergunta">
+            <p>Como Quer ser Chamado ?</p>
+          </div>
+          <input type="text" name="usuario" id="" value="{{ request.POST.usuario }}" placeholder="Seu nome de usuário">
+          <svg width="844" height="5" viewBox="0 0 844 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0.996475" y1="3.48121" x2="843.997" y2="1.50001" stroke="white" stroke-width="3"/>
+            </svg>
         </div>
+
         <div class="info">
-          <p>Usuário</p>
-          <input type="text" name="usuario" id="" value="{{ request.POST.usuario }}">
+          <div class="pergunta">
+            <p>Um código secreto, que só você saiba</p>
+          </div>
+          <input type="password" name="senha" id="" placeholder="Seu senha.">
+          <svg width="844" height="5" viewBox="0 0 844 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0.996475" y1="3.48121" x2="843.997" y2="1.50001" stroke="white" stroke-width="3"/>
+            </svg>
         </div>
+
         <div class="info">
-          <p>Senha</p>
-          <input type="password" name="senha" id="">
+          <div class="pergunta">
+            <p>será que lembra do seu próprio código secreto?</p>
+          </div>
+          <input type="password" name="senha2" id="" placeholder="Digite sua senha novamente.">
+          <svg width="844" height="5" viewBox="0 0 844 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0.996475" y1="3.48121" x2="843.997" y2="1.50001" stroke="white" stroke-width="3"/>
+            </svg>
         </div>
-        <div class="info">
-          <p>Confirme sua senha</p>
-          <input type="password" name="senha2" id="">
-        </div>
+
+      </div>
+      <div class="botoes">
+        <a type="0" value="0" id="btn-back"><svg width="29" height="54" viewBox="0 0 29 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M25.0393 0.794802L1.07254 25.3813C0.6516 25.8132 0.416016 26.3924 0.416016 26.9954C0.416016 27.5985 0.6516 28.1777 1.07254 28.6095L25.0393 53.2053C25.2354 53.4067 25.4698 53.5668 25.7288 53.6761C25.9877 53.7853 26.266 53.8417 26.547 53.8417C26.8281 53.8417 27.1064 53.7853 27.3653 53.6761C27.6243 53.5668 27.8587 53.4067 28.0548 53.2053C28.4582 52.7923 28.684 52.2379 28.684 51.6605C28.684 51.0832 28.4582 50.5288 28.0548 50.1158L5.51716 26.9954L28.0548 3.87968C28.4568 3.46689 28.6818 2.91345 28.6818 2.33724C28.6818 1.76103 28.4568 1.20759 28.0548 0.794802C27.8587 0.593413 27.6243 0.433347 27.3653 0.324052C27.1064 0.214757 26.8281 0.158447 26.547 0.158447C26.266 0.158447 25.9877 0.214757 25.7288 0.324052C25.4698 0.433347 25.2354 0.593413 25.0393 0.794802V0.794802Z" fill="white"/>
+          </svg>
+        </a>
+        <a type="0" value="0" id="btn-next" ><svg width="29" height="54" viewBox="0 0 29 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.96071 0.794802L27.9275 25.3813C28.3484 25.8132 28.584 26.3924 28.584 26.9954C28.584 27.5985 28.3484 28.1777 27.9275 28.6095L3.96071 53.2053C3.76463 53.4067 3.53019 53.5668 3.27123 53.6761C3.01227 53.7853 2.73404 53.8417 2.45296 53.8417C2.17188 53.8417 1.89365 53.7853 1.63469 53.6761C1.37573 53.5668 1.14129 53.4067 0.945209 53.2053C0.541806 52.7923 0.315964 52.2379 0.315964 51.6605C0.315964 51.0832 0.541806 50.5288 0.945209 50.1158L23.4828 26.9954L0.945209 3.87968C0.54319 3.46689 0.318222 2.91345 0.318222 2.33724C0.318222 1.76103 0.54319 1.20759 0.945209 0.794802C1.14129 0.593413 1.37573 0.433347 1.63469 0.324052C1.89365 0.214757 2.17188 0.158447 2.45296 0.158447C2.73404 0.158447 3.01227 0.214757 3.27123 0.324052C3.53019 0.433347 3.76463 0.593413 3.96071 0.794802V0.794802Z" fill="white"/>
+          </svg>
+        </a>
+
+        <button type="submit" value="submit" id="btn-conf" ><svg width="29" height="54" viewBox="0 0 29 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.96071 0.794802L27.9275 25.3813C28.3484 25.8132 28.584 26.3924 28.584 26.9954C28.584 27.5985 28.3484 28.1777 27.9275 28.6095L3.96071 53.2053C3.76463 53.4067 3.53019 53.5668 3.27123 53.6761C3.01227 53.7853 2.73404 53.8417 2.45296 53.8417C2.17188 53.8417 1.89365 53.7853 1.63469 53.6761C1.37573 53.5668 1.14129 53.4067 0.945209 53.2053C0.541806 52.7923 0.315964 52.2379 0.315964 51.6605C0.315964 51.0832 0.541806 50.5288 0.945209 50.1158L23.4828 26.9954L0.945209 3.87968C0.54319 3.46689 0.318222 2.91345 0.318222 2.33724C0.318222 1.76103 0.54319 1.20759 0.945209 0.794802C1.14129 0.593413 1.37573 0.433347 1.63469 0.324052C1.89365 0.214757 2.17188 0.158447 2.45296 0.158447C2.73404 0.158447 3.01227 0.214757 3.27123 0.324052C3.53019 0.433347 3.76463 0.593413 3.96071 0.794802V0.794802Z" fill="white"/>
+          </svg>
+        </button>
+
       </div>
     </form>
-    <div>
-      <button ><svg width="29" height="54" viewBox="0 0 29 54" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M25.0393 0.794802L1.07254 25.3813C0.6516 25.8132 0.416016 26.3924 0.416016 26.9954C0.416016 27.5985 0.6516 28.1777 1.07254 28.6095L25.0393 53.2053C25.2354 53.4067 25.4698 53.5668 25.7288 53.6761C25.9877 53.7853 26.266 53.8417 26.547 53.8417C26.8281 53.8417 27.1064 53.7853 27.3653 53.6761C27.6243 53.5668 27.8587 53.4067 28.0548 53.2053C28.4582 52.7923 28.684 52.2379 28.684 51.6605C28.684 51.0832 28.4582 50.5288 28.0548 50.1158L5.51716 26.9954L28.0548 3.87968C28.4568 3.46689 28.6818 2.91345 28.6818 2.33724C28.6818 1.76103 28.4568 1.20759 28.0548 0.794802C27.8587 0.593413 27.6243 0.433347 27.3653 0.324052C27.1064 0.214757 26.8281 0.158447 26.547 0.158447C26.266 0.158447 25.9877 0.214757 25.7288 0.324052C25.4698 0.433347 25.2354 0.593413 25.0393 0.794802V0.794802Z" fill="white"/>
-        </svg>
-        </button>
-      <button><svg width="29" height="54" viewBox="0 0 29 54" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M3.96071 0.794802L27.9275 25.3813C28.3484 25.8132 28.584 26.3924 28.584 26.9954C28.584 27.5985 28.3484 28.1777 27.9275 28.6095L3.96071 53.2053C3.76463 53.4067 3.53019 53.5668 3.27123 53.6761C3.01227 53.7853 2.73404 53.8417 2.45296 53.8417C2.17188 53.8417 1.89365 53.7853 1.63469 53.6761C1.37573 53.5668 1.14129 53.4067 0.945209 53.2053C0.541806 52.7923 0.315964 52.2379 0.315964 51.6605C0.315964 51.0832 0.541806 50.5288 0.945209 50.1158L23.4828 26.9954L0.945209 3.87968C0.54319 3.46689 0.318222 2.91345 0.318222 2.33724C0.318222 1.76103 0.54319 1.20759 0.945209 0.794802C1.14129 0.593413 1.37573 0.433347 1.63469 0.324052C1.89365 0.214757 2.17188 0.158447 2.45296 0.158447C2.73404 0.158447 3.01227 0.214757 3.27123 0.324052C3.53019 0.433347 3.76463 0.593413 3.96071 0.794802V0.794802Z" fill="white"/>
-        </svg>
-        </button>
-    </div>
+
+    {% include 'parciais/_messages.html' %}
     
   </div>
 </body>

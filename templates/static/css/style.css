@@ -25,14 +25,17 @@ body,
 html {
   width: 100%;
   height: 100%;
-
   font-family: 'Roboto';
   font-size: 1.6rem;
 }
 
 .wrapper {
   width: 100%;
-  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
 }
 
 .navebar{
@@ -69,12 +72,14 @@ html {
   align-items: center;
   justify-content: center;
 }
+
 .apresentacao h1{
   padding-top: 8.5rem;
   font-family: 'Yan', 'Bebas Neue', sans-serif;
   text-shadow: -1.5rem 0.6rem 3rem #1EB824;
   color: white;
-  font-size: 9.6rem;
+  /* font-size: 9.6rem; */
+  font-size: 10vmin;
   font-weight: 500;
   letter-spacing: .4rem;
 }
@@ -83,18 +88,18 @@ html {
   font-family: 'Yan', 'Bebas Neue', sans-serif;
   text-shadow: -1.5rem 0.6rem 3.8rem #1EB824;
   color: white;
-  font-size: 4.5rem;
+  /* font-size: 4.5rem; */
+  font-size: 5vmin;
   font-weight: 500;
   letter-spacing: .4rem;
 }
 
-.apresentacao img{
-  width: 50rem;
-  margin-bottom: 3rem;
-  margin-bottom: 8rem;
+.apresentacao-svg {
+  /* width: 50rem; */
+  width: 35vmin;
 }
 
-.container .backgound{
+.container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -103,39 +108,51 @@ html {
 
 .container .cards {
   display: flex;
+  flex-direction: row;
   width: 100%;
   align-items: center;
   justify-content: center;
-  padding-top: 10rem;
-  padding-bottom: 0rem;
-
+  /* padding-top: 10rem;
+  padding-bottom: 0rem; */
   gap: 6.2rem;
 }
 
+@media only screen and (max-width: 800px) {
+  .container .cards {
+    flex-direction: column;
+  }
+}
+
+.container {
+  padding-bottom: 20rem;
+}
 
 .card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 40rem;
-  height: 41rem;
-
+  width: 42vmin;
+  height: 50vmin;
   border-radius: 1rem;
   background-color: var(--primary-color);
   padding: 2rem;
   gap: 2rem;
-  transform: skew(-6deg)
-  
+  transform: skew(-6deg);
 }
 
 .card h2{
   font-family: 'Bebas Neue', sans-serif;
   color: white;
-  font-size: 6rem;
+  font-size: 5vmin;
 }
 
 .card p{
   font-family: 'Bebas Neue', sans-serif;
   color: white;
-  font-size: 1.4rem;
+  /* font-size: 1.4rem; */
+  font-size: 1.7vmin;
+}
+
+.card-svg {
+  width: 10vmin;
 }
