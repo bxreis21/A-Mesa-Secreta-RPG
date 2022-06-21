@@ -63,6 +63,18 @@ html {
   padding-right: 1.8rem;
 }
 
+.logoo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+.logoo img{
+  max-width:45%;
+}
+
 .apresentacao{
   display: flex;
   flex-direction: column;
@@ -78,7 +90,7 @@ html {
   font-size: 10vmin;
   font-weight: 500;
   letter-spacing: .4rem;
-  margin-bottom: -3rem;
+  margin-bottom: -5%;
 }
 
 .apresentacao h2{
@@ -118,11 +130,20 @@ html {
 @media only screen and (max-width: 800px) {
   .container .cards {
     flex-direction: column;
+    gap: 2rem;
+  }
+
+  .container .cards .card{
+    width: 60%;
+  }
+
+  .container .cards .card p{
+    
   }
 }
 
 .container {
-  padding-bottom: 20rem;
+  padding-bottom: 10rem;
 }
 
 .card {

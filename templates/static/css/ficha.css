@@ -30,53 +30,87 @@ html {
 }
 
 .wrapper {
-  background-color: #f8f5de;
+  width: 100%;
+  height: 100%;
   background-image: linear-gradient(to right, rgba(255,210,0,0.4), rgba(200, 160, 0, 0.1) 11%, rgba(0,0,0,0) 35%, rgba(200, 160, 0, 0.1) 65%);
   box-shadow: inset 0 0 75rem rgba(255,210,0,0.3), inset 0 0 20px rgba(255,210,0,0.4), inset 0 0 30px rgba(220,120,0,0.8);
   color: rgba(0,0,0,0.5);
-  font-family: "AustralisProSwash-Italic";
-  width: 100% -calc(8.5rem - 15rem);
-  height: 100%;
-  letter-spacing: 0.05rem;
-  line-height: 1.8;
-  padding: 5rem 20rem 15rem 20rem;  
 }
-.caps {
-  color: rgba(0,0,0,0.7);
-  float:left;
-  font-size: 7em;
-  line-height: 60px;
-  padding-right: 12px;
-  position:relative;
-  top:8px;
+
+input{
+  background:none;
+  border: none;
+  border-bottom-color:black ;
+  border-bottom-width: 100%;
+  padding-left: 1rem;
 }
+
 
 .header{
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
 }
 
-.header .info-inicial .nomes{
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  padding-bottom: 5rem;
+.header .info-inicial{
+  margin-left: 3%;
+  width: 40%;
 }
 
-.header .info-inicial .adicionais {
-  display: grid;
- 
-  row-gap: 1rem;
-  column-gap: 4rem;
-  grid-template-columns: 1fr 2fr 1fr 2fr;
+.header .info-inicial .nomes .celula{
+  display: flex;
+  width: 100%;
 }
+
+.header .info-inicial .nomes .celula input{
+  width:100%;
+}
+.header .info-inicial h2{
+  font-size: 2rem;
+}
+
+.header .info-inicial .adicionais{
+  display: flex;
+  flex-direction:row;
+}
+
+.header .info-inicial .adicionais .conjunto{
+  width: 100%;
+}
+
+.header .info-inicial .adicionais .celula{
+  display: flex;
+  width: 100%;
+}
+.header .info-inicial .adicionais .celula input{
+  display: flex;
+  width: 100%;
+}
+
+.header img{
+  width: 12%;
+  margin-right: 3%;
+}
+
+@media only screen and (max-width: 900px) {
+  .header .info-inicial{
+    margin-left: 3%;
+    width: 80%;
+  }
+  .header .info-inicial .adicionais{
+    display: flex;
+    flex-direction:column;
+  }
+}
+
 
 .pericias {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction:column;
-
+  width: 100%;
   gap: 2.5rem;
 }
 
@@ -87,35 +121,77 @@ html {
 .pericias .box{
   display: grid;
   grid-template-columns:  1fr 1fr  1fr 1fr 1fr;
-  gap: 4rem;
+  gap: 2rem;
   padding-bottom: 5rem;
 }
 
 .pericias .box .pericia{
   display:flex;
-  gap: 5rem;
+  width: 100%;
+  gap: 1rem;
 }
 
 .pericias .box .pericia input{
-  width: 5rem;
+  width: 100%;
+  min-width: 3rem;
+  max-width: 5rem;
+  text-align: center;
 }
 
 .pericias p {
   font-size: 2.5rem;
 }
 
+
+@media only screen and (max-width: 950px) {
+  .pericias .box{
+    grid-template-columns:  1fr 1fr  1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .pericias .box{
+    grid-template-columns:  1fr 1fr  1fr;
+  }
+}
+
+@media only screen and (max-width: 580px) {
+  .pericias .box{
+    grid-template-columns:  1fr 1fr;
+  }
+}
+
+
+.estatos{
+  display: flex;
+  width: 100%;
+  background-color: aqua;
+}
+
+.estatos .atributos{
+  display: flex;
+  width: 30%;
+  min-width: 26rem;
+  
+  padding-left: 3%;
+  background-color: #c2185b;
+}
+
+.estatos .atributos img{
+  width: 100%;
+}
 .estatos .atributos input{
   position: relative;
   width: 7rem;
   height: 6rem;
-  background: none;
+  background-color: black;
   font-size: 5rem;
   text-align: center;
 }
 
 .estatos .atributos input:nth-child(2){
-  top: -36.8rem;
-  left: -25.8rem;
+  top: 20%;
+  left: -54%;
 }
 .estatos .atributos input:nth-child(3){
   top: -27rem;
