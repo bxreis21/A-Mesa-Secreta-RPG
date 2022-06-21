@@ -1,0 +1,161 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/ficha.css'%}">
+  <title>Ficha</title>
+</head>
+<body>
+    <form method="post" action="{% url 'ficha' %}">
+        {% csrf_token %}
+        <div class="wrapper">
+            <div class="header">
+            <div class="info-inicial">
+                <h2>Jogador:</h2>
+                <input name="jogador" type="text">
+                <div class="adicionais">
+                <h2>Nome do personagem:</h2>
+                <input name="nome_personagem" type="">
+                <h2>Origem:</h2>
+                <input name="origem" type="">
+                <h2>Classe: </h2>
+                <input name="classe" type="">
+                <h2>NEX:</h2>
+                <input name="nex" type="">
+                <h2>Patente:</h2>
+                <input name="patente" type="">
+                </div>
+            <br>
+            </div>
+            <hr>
+            <div class="info-inicial">
+                <h2>Força:</h2>
+                <input name="forca" type="text">
+                <h2>Agilidade:</h2>
+                <input name="agilidade" type="">
+                <h2>inteligencia:</h2>
+                <input name="inteligencia" type="">
+                <h2>Presença:</h2>
+                <input name="presenca" type="">
+                <h2>Vigor:</h2>
+                <input name="vigor" type="">
+            </div>
+                <img src="" alt="">
+            </div>
+
+            <div class="pericias">
+                <div class="box">
+
+                    <!--  for tem q comecar aki -->
+                    <div class="pericia">
+                    <p>Atletismo</p>
+                    <input name="Atletismo" type="text">
+                    </div>
+                    <!-- for acaba aki  -->
+
+                </div>
+            </div>
+
+            <div class="estatosos">
+            <div class="atributos">
+                <input id="agilidade" type="text" name="">
+                <input id="inteligencia" type="text" name="">
+                <input id="vigor" type="text" name="">
+                <input id="presenca" type="text" name="">
+                <input id="forca" type="text" name="">
+                <img src="" alt="">
+            </div>
+
+            <div class="estato">
+                <div class="saude">
+                <h2>Saude</h2>
+                <div>
+                    <p>pv</p>
+                    <input id="pv" type="text" name="">
+                    <p>san</p>
+                    <input id="sanidade" type="text" name="">
+                    <p>pe</p>
+                    <input id="pe" type="text" name="">
+                </div>
+                <h2>Defesa</h2>
+                <div>
+                    <p>Passiva</p>
+                    <input id="passiva" type="text" name="">
+                    <p>Bloquei</p>
+                    <input id="bloquei" type="text" name="">
+                    <p>Esquiva</p>
+                    <input id="esquiva" type="text" name="">
+                </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="Armas">
+            <h2>Armas</h2>
+            <img src="" alt="">
+            <div>
+                <p>Arma</p>
+                <p>Tipo</p>
+                <p>Ataque</p>
+                <p>Alcance</p>
+                <p>Dano</p>
+                <p>Critico</p>
+                <p>Recarga</p>
+                <p>Especial</p>
+            </div>
+
+            <!-- aki toda a linha vai ter q add td isso-->
+            <div>
+                <input name="arma" type="text">
+                <input name="tipo" type="text">
+                <input name="ataque" type="text">
+                <input name="alquece" type="text">
+                <input name="dano" type="text">
+                <input name="critico" type="text">
+                <input name="recarga" type="text">
+                <input name="especial" type="text">
+            </div>
+            <!-- Acaba aki kda linha-->
+
+            </div>
+
+            <div class="habilidades">
+            <div class="proficiencias">
+                <h2>Proeficiencias</h2>
+                <input name="proeficia-text" type="text">
+            </div>
+            <div class="habilidade">
+                <h2>habilidades</h2>
+                <input name="habilidade-text" type="text">
+            </div>
+            </div>
+
+            <div class="inventario">
+            <h2>Inventario</h2>
+            <img src="" alt="">
+            <div>
+                <p>Arma</p>
+                <p>Tipo</p>
+                <p>Ataque</p>
+                <p>Alquece</p>
+            </div>
+
+            <!-- aki toda a linha vai ter q add td isso-->
+            <div>
+                <input name="arma" type="text" src="" alt="">
+                <input name="tipo" type="text" src="" alt="">
+                <input name="ataque" type="text" src="" alt="">
+                <input name="alcance" type="text" src="" alt="">
+            </div>
+            <br>
+            <br>
+            <!-- Acaba aki kda linha-->
+            <button type="submit" value="submit">AQUI</button>
+
+            </div>
+        </div>
+    </form>

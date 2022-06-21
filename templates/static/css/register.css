@@ -68,7 +68,6 @@ textarea:focus, input:focus {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10.6rem;
 }
 
 .info {
@@ -76,7 +75,7 @@ textarea:focus, input:focus {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 3rem;
+  gap: 0rem;
 }
 
 .info:nth-child(1){
@@ -92,7 +91,7 @@ input{
 }
 
 .pergunta{
-  max-width: 120rem;
+  max-width: 100rem;
   min-height: 28.267rem;
   display: flex;
   align-items: flex-end;
@@ -103,11 +102,13 @@ input{
 p{
   font-family: 'Yan';
   font-weight: 500;
-  font-size: 4rem;
+  font-size: 8rem;
   text-shadow: 0px 4px 1px rgba(0, 0, 0, 0.25);
   color: white;
-  font-size: 10rem;
+  font-size: 8rem;
   text-align: center;
+  line-height: 6rem;
+  padding-bottom: 5rem;
 }
 
 a{
@@ -116,6 +117,9 @@ a{
   font-size: 3rem;  
   color: white;
   text-decoration: none;
+  padding: none;
+  margin: 0;
+  height: 5.4rem;
 }
 
 #btn-conf,
@@ -142,3 +146,14 @@ form {
 .alerta-erro p{
   font-size: 8rem;
 }
+
+#btn-conf{
+  background: none;
+  border: 0rem;
+  padding: 0rem;
+  overflow: none;
+  margin: 0rem;
+  margin: 0;
+  height: 5.4rem;
+}
+
